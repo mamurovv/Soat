@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soat</title>\
+    <link rel="stylesheet" href="soat.css">
+</head>
+
+<body>
+<div class="content">
+    <div id="hour"></div>
+    <span class="w1">:</span>
+    <div id="minut"></div>
+    <span class="w1">:</span>
+    <div id="sekond"></div>
+</div>
+
+<script>
+    setInterval(showTime, 1000)
+    
+    function showTime() {
+        let time = new Date()
+
+        let soat = time.getHours()
+        let fullSoat = currentTime(soat)
+        document.getElementById('hour').innerHTML = fullSoat
+
+        let minut = time.getMinutes()
+        let fullMinut = currentTime(minut)
+        document.getElementById('minut').innerHTML = fullMinut
+
+        let secund = time.getSeconds()
+        let fullSecund = currentTime(secund)
+        document.getElementById('sekond').innerHTML = fullSecund
+    }
+
+    function currentTime(i) {
+        if(i<10){
+        i = '0' +i
+    }
+    return i
+    }
+    
+</script>
+</body>
+</html>

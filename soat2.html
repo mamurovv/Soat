@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #091921;
+        }
+        .clock{
+
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('data:image/png;base64,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');
+            background-size: cover;
+            border-radius: 50%;
+            border: 4px solid #091921;
+            box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                        inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                        0 15px 15px rgba(0, 0, 0, 0.05),
+                        inset 0 15px 15px rgba(0, 0, 0, 0.05);
+        }
+        .clock:before{
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #091921;
+            border-radius: 50%;
+            z-index: 10000;
+        }
+        .clock .hour,
+        .clock .min,
+        .clock .sec{
+            position: absolute;
+        }
+        .clock .hour, .hr{
+            width: 160px;
+            height: 160px;
+        }
+        .clock .min, .mn{
+            width: 190px;
+            height: 190px;
+        }
+        .clock .sec, .sc{
+            width: 230px;
+            height: 230px;
+        }
+        .hr, .mn, .sc{
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            position: absolute;
+            border-radius: 50%;
+
+        }
+        .hr:before{
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 80px;
+            background: #ff105e;
+            z-index: 10;
+            border-radius: 6px 6px 0 0;
+        }
+        .mn:before{
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 90px;
+            background: #091921;
+            z-index: 11;
+            border-radius: 6px 6px 0 0;
+        }
+        .sc:before{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 150px;
+            background: #091921;
+            z-index: 12;
+            border-radius: 6px 6px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+    <script>
+     const deg = 6;
+     const hr = document.querySelector('#hr');
+     const mn = document.querySelector('#mn');
+     const sc = document.querySelector('#sc');
+
+     setInterval(()=>{
+     let day = new Date();
+     let hh = day.getHours() * 30;
+     let mm = day.getMinutes() * deg;
+     let ss = day.getSeconds() * deg;
+
+     hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+     mn.style.transform = `rotateZ(${mm}deg)`;
+     sc.style.transform = `rotateZ(${ss}deg)`;
+     })
+
+    </script>
+    
+</body>
+</html>
